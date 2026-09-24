@@ -3,6 +3,10 @@ from weather import get_weather
 
 app = FastAPI()
 
+@app.get("/")
+def home():
+    return {"message": "天气服务已启动"}
+
 
 @app.get("/weather/{city}")
 def weather(city):
